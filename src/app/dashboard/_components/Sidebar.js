@@ -81,7 +81,7 @@ export default function Sidebar({ menuItems, userData, user }) {
                     <form action="/auth/logout" method="post">
                         <button
                             type="submit"
-                            className="w-full flex items-center gap-4 px-6 py-4 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-2xl transition-all font-bold group"
+                            className="w-full flex items-center gap-4 px-4 py-2 md:px-6 md:py-4 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-2xl transition-all font-bold group"
                         >
                             <Icons.LogOut className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                             <span className="text-sm uppercase tracking-widest">Keluar</span>

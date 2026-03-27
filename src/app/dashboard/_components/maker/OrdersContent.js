@@ -157,7 +157,7 @@ export default function OrdersContent({ userData, user }) {
 
                 <button
                     onClick={() => router.push('/dashboard/calendar')}
-                    className="flex items-center justify-center gap-3 bg-white border border-gray-100 text-gray-900 px-8 py-5 rounded-[2rem] font-black text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition-all shadow-xl shadow-gray-100/50 active:scale-95 uppercase tracking-widest italic"
+                    className="flex items-center justify-center gap-3 bg-white border border-gray-100 text-gray-900 px-4 py-3 md:px-8 md:py-5 rounded-[2rem] font-black text-lg hover:bg-orange-600 hover:text-white hover:border-orange-600 transition-all shadow-xl shadow-gray-100/50 active:scale-95 uppercase tracking-widest italic"
                 >
                     <Calendar className="w-6 h-6" />
                     Cek Kalender

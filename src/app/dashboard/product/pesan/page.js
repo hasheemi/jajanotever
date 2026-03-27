@@ -180,7 +180,7 @@ function PesanForm() {
                                         Pilih Jajan
                                     </label>
                                     {productIdParam ? (
-                                        <div className="w-full px-6 py-4 bg-orange-50 border border-orange-100/50 rounded-3xl font-black text-orange-600 text-lg flex justify-between items-center italic">
+                                        <div className="w-full px-4 py-2 md:px-6 md:py-4 bg-orange-50 border border-orange-100/50 rounded-3xl font-black text-orange-600 text-lg flex justify-between items-center italic">
                                             <span>{formData.productName}</span>
                                             <span className="text-orange-600">Rp {Number(formData.price).toLocaleString('id-ID')}</span>
                                         </div>
@@ -190,7 +190,7 @@ function PesanForm() {
                                                 required
                                                 value={formData.productId}
                                                 onChange={handleProductSelect}
-                                                className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 appearance-none"
+                                                className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 appearance-none"
                                             >
                                                 <option value="">-- Pilih Produk --</option>
                                                 {products.map(p => (
@@ -218,7 +218,7 @@ function PesanForm() {
                                         type="text"
                                         readOnly
                                         value={formData.makerName || "Pilih jajan dahulu"}
-                                        className="w-full px-6 py-4 bg-gray-50 border border-transparent rounded-3xl font-bold text-gray-400 cursor-not-allowed"
+                                        className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-transparent rounded-3xl font-bold text-gray-400 cursor-not-allowed"
                                     />
                                 </div>
                             </div>
@@ -232,7 +232,7 @@ function PesanForm() {
                                 <textarea
                                     value={formData.notes}
                                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                                    className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 min-h-[160px]"
+                                    className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 min-h-[160px]"
                                     placeholder="Tuliskan permintaan khusus Anda di sini..."
                                 />
                             </div>
@@ -256,7 +256,7 @@ function PesanForm() {
                                         min="1"
                                         value={formData.quantity}
                                         onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-black text-2xl text-gray-900"
+                                        className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-black text-2xl text-gray-900"
                                         placeholder="0"
                                     />
                                 </div>

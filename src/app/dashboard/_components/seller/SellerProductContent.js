@@ -131,7 +131,7 @@ export default function SellerProductContent({ titipan: initialTitipan, userData
                 </div>
                 <button
                     onClick={() => router.push('/dashboard/product/pesan')}
-                    className="flex items-center justify-center gap-3 bg-orange-600 text-white px-8 py-5 rounded-[2rem] font-black text-lg hover:bg-orange-700 transition-all shadow-2xl shadow-orange-100 active:scale-95 uppercase tracking-widest italic"
+                    className="flex items-center justify-center gap-3 bg-orange-600 text-white px-4 py-3 md:px-8 md:py-5 rounded-[2rem] font-black text-lg hover:bg-orange-700 transition-all shadow-2xl shadow-orange-100 active:scale-95 uppercase tracking-widest italic"
                 >
                     <Plus className="w-6 h-6" />
                     Pesan Jajan Baru
@@ -201,7 +201,7 @@ export default function SellerProductContent({ titipan: initialTitipan, userData
                                         type="number"
                                         value={catatData.sisa}
                                         onChange={(e) => setCatatData(prev => ({ ...prev, sisa: e.target.value }))}
-                                        className="w-full px-8 py-5 bg-gray-50 border border-transparent rounded-[2rem] focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-black text-2xl text-gray-900"
+                                        className="w-full px-4 py-3 md:px-8 md:py-5 bg-gray-50 border border-transparent rounded-[2rem] focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-black text-2xl text-gray-900"
                                         placeholder="0"
                                     />
                                 </div>
@@ -210,7 +210,7 @@ export default function SellerProductContent({ titipan: initialTitipan, userData
                                     <textarea
                                         value={catatData.deskripsi}
                                         onChange={(e) => setCatatData(prev => ({ ...prev, deskripsi: e.target.value }))}
-                                        className="w-full px-8 py-5 bg-gray-50 border border-transparent rounded-[2rem] focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 min-h-[140px]"
+                                        className="w-full px-4 py-3 md:px-8 md:py-5 bg-gray-50 border border-transparent rounded-[2rem] focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900 min-h-[140px]"
                                         placeholder="Contoh: Laku keras hari ini!"
                                     />
                                 </div>
@@ -226,7 +226,7 @@ export default function SellerProductContent({ titipan: initialTitipan, userData
                                 </button>
                                 <button
                                     onClick={() => setCatatProduct(null)}
-                                    className="w-full md:w-auto px-10 py-5 bg-gray-100 text-gray-500 rounded-[2rem] font-black text-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-3 active:scale-95 uppercase tracking-widest"
+                                    className="w-full md:w-auto px-5 py-3 md:px-10 md:py-5 bg-gray-100 text-gray-500 rounded-[2rem] font-black text-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-3 active:scale-95 uppercase tracking-widest"
                                 >
                                     <X className="w-6 h-6" />
                                     Batalkan

@@ -308,7 +308,7 @@ export default function SendProductContent({ product, currentUser }) {
                 <button
                     onClick={handleConfirm}
                     disabled={submitting || loading || sellers.length === 0}
-                    className="bg-orange-600 text-white px-12 py-5 rounded-[2.5rem] font-bold text-2xl flex items-center justify-center gap-3 hover:bg-orange-700 transition-all shadow-xl shadow-orange-200 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100 disabled:shadow-none"
+                    className="bg-orange-600 text-white px-4 py-2 md:px-6 md:py-3 md:px-12 md:py-5 rounded-[2.5rem] font-bold text-2xl flex items-center justify-center gap-3 hover:bg-orange-700 transition-all shadow-xl shadow-orange-200 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100 disabled:shadow-none"
                 >
                     {submitting ? <Loader2 className="w-8 h-8 animate-spin" /> : <FileText className="w-8 h-8" />}
                     {submitting ? 'Mengirim...' : 'Konfirmasi'}
@@ -332,17 +332,17 @@ export default function SendProductContent({ product, currentUser }) {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50/50">
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Penjual</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Awal</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Sisa</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-right">Total Uang</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Tanggal</th>
+                                    <th className="px-4 py-2 md:px-6 md:py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Penjual</th>
+                                    <th className="px-4 py-2 md:px-6 md:py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Awal</th>
+                                    <th className="px-4 py-2 md:px-6 md:py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Sisa</th>
+                                    <th className="px-4 py-2 md:px-6 md:py-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-right">Total Uang</th>
+                                    <th className="px-4 py-2 md:px-6 md:py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Tanggal</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
                                 {lacakData.map((item) => (
                                     <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
-                                        <td className="px-6 py-4">
+                                        <td className="px-4 py-2 md:px-6 md:py-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-xs font-bold">
                                                     {item.seller_id.charAt(0).toUpperCase()}
@@ -352,12 +352,12 @@ export default function SendProductContent({ product, currentUser }) {
                                                 </span>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-600">{item.jumlah_awal} pcs</td>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-600">{item.jumlah_sisa} pcs</td>
-                                        <td className="px-6 py-4 text-sm font-bold text-orange-600 text-right">
+                                        <td className="px-4 py-2 md:px-6 md:py-4 text-sm font-medium text-gray-600">{item.jumlah_awal} pcs</td>
+                                        <td className="px-4 py-2 md:px-6 md:py-4 text-sm font-medium text-gray-600">{item.jumlah_sisa} pcs</td>
+                                        <td className="px-4 py-2 md:px-6 md:py-4 text-sm font-bold text-orange-600 text-right">
                                             Rp {item.total_uang.toLocaleString('id-ID')}
                                         </td>
-                                        <td className="px-6 py-4 text-xs text-gray-400">
+                                        <td className="px-4 py-2 md:px-6 md:py-4 text-xs text-gray-400">
                                             {new Date(item.created_at).toLocaleDateString('id-ID', {
                                                 day: 'numeric',
                                                 month: 'short',

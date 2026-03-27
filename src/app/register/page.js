@@ -87,7 +87,7 @@ export default async function RegisterPage() {
                                 name="name"
                                 type="text"
                                 required
-                                className="w-full px-5 py-4 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
+                                className="w-full px-4 py-3 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
                                 placeholder="Cth: Budi Santoso"
                                 defaultValue={user.user_metadata?.full_name || ''}
                             />
@@ -101,7 +101,7 @@ export default async function RegisterPage() {
                                 id="role"
                                 name="role"
                                 required
-                                className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white"
+                                className="w-full px-4 py-2.5 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white"
                             >
                                 <option value="" disabled>Pilih peran Anda</option>
                                 <option value="maker">Maker (Pembuat Jajan)</option>
@@ -110,24 +110,36 @@ export default async function RegisterPage() {
                         </div>
 
                         <div>
-                            <label htmlFor="paguyuban" className="block text-xs font-black text-gray-400 uppercase mb-2 ml-1 tracking-widest">
+                            <label
+                                htmlFor="paguyuban"
+                                className="block text-xs font-black text-gray-400 uppercase mb-2 ml-1 tracking-widest"
+                            >
                                 Paguyuban (Komunitas)
                             </label>
-                            <input
+
+                            <select
                                 id="paguyuban"
                                 name="paguyuban"
-                                type="text"
                                 required
-                                className="w-full px-5 py-4 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
-                                placeholder="Cth: Paguyuban Jajan Pasar"
-                            />
+                                className="w-full px-4 py-3 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
+                                defaultValue=""
+                            >
+                                <option value="" disabled>
+                                    Pilih paguyuban
+                                </option>
+                                <option value="sejahtera">Sejahtera</option>
+                                <option value="aman">Aman</option>
+                                <option value="damai">Damai</option>
+                                <option value="makmur">Makmur</option>
+                                <option value="wijaya">Wijaya</option>
+                            </select>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-3 mt-8">
                         <button
                             type="submit"
-                            className="w-full flex items-center justify-center bg-orange-600 py-5 px-6 rounded-2xl font-black text-white hover:bg-orange-700 shadow-xl shadow-orange-200 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest"
+                            className="w-full flex items-center justify-center bg-orange-600 py-3 px-4 rounded-2xl font-black text-white hover:bg-orange-700 shadow-xl shadow-orange-200 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest"
                         >
                             Selesaikan Pendaftaran
                         </button>

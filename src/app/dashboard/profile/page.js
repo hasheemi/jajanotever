@@ -146,7 +146,7 @@ export default function ProfilePage() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                                    className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900"
+                                    className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900"
                                     placeholder="Cth: Budi Santoso"
                                 />
                             </div>
@@ -162,7 +162,7 @@ export default function ProfilePage() {
                                     required
                                     value={formData.address}
                                     onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
-                                    className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900"
+                                    className="w-full px-4 py-2 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-3xl focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:bg-white focus:border-orange-500 transition-all font-bold text-gray-900"
                                     placeholder="Cth: Surabaya, Jawa Timur"
                                 />
                             </div>
@@ -205,7 +205,7 @@ export default function ProfilePage() {
                             <button
                                 type="button"
                                 onClick={() => router.back()}
-                                className="w-full md:w-auto px-10 py-5 bg-gray-100 text-gray-500 rounded-[2rem] font-black text-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-3 active:scale-95 uppercase tracking-widest"
+                                className="w-full md:w-auto px-5 py-3 md:px-10 md:py-5 bg-gray-100 text-gray-500 rounded-[2rem] font-black text-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-3 active:scale-95 uppercase tracking-widest"
                             >
                                 <X className="w-6 h-6" />
                                 Batalkan

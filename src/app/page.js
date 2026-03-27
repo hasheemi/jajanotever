@@ -10,14 +10,12 @@ export default function LandingPage() {
           <ShoppingBag className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
           <span className="ml-2 text-2xl font-black tracking-tight text-black italic">Jajanote</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-bold text-gray-900 hover:text-orange-600 transition-colors uppercase tracking-widest" href="/login">
+        <nav className="ml-auto flex gap-4 sm:gap-6 hidden md:block">
+          <Link className="text-sm font-black bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition-all shadow-lg shadow-orange-100 hover:scale-105 active:scale-95 uppercase tracking-widest" href="/login">
             Masuk
           </Link>
-          <Link className="text-sm font-black bg-orange-600 text-white px-6 py-2.5 rounded-full hover:bg-orange-700 transition-all shadow-lg shadow-orange-100 hover:scale-105 active:scale-95 uppercase tracking-widest" href="/login">
-            Mulai Sekarang
-          </Link>
         </nav>
+
       </header>
 
       <main className="flex-1">
@@ -28,14 +26,29 @@ export default function LandingPage() {
               <div className="space-y-2">
                 <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl leading-[0.9]">
                   Catat <span className="text-orange-600 italic">Jajan</span> Anda <br />
-                  dari Pembuat ke Penjual
+                  dari Produsen ke Pengecer
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl lg:text-2xl mt-6 font-medium">
                   Alat bantu web utama untuk ekosistem jajanan Indonesia. Kelola produksi, stok, dan penjualan dengan mudah.
                 </p>
               </div>
-              <div className="space-x-4 pt-4">
-                <Link href="/login" className="inline-flex items-center justify-center rounded-full bg-orange-600 px-10 py-5 text-xl font-black text-white shadow-2xl shadow-orange-200 hover:bg-orange-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
+              <div className="pt-4">
+                <Link
+                  href="/login"
+                  className="
+      inline-flex items-center justify-center
+      rounded-full
+      bg-orange-600 text-white
+      shadow-2xl shadow-orange-200
+      transition-all hover:scale-105 active:scale-95 hover:bg-orange-700
+      uppercase tracking-widest
+
+      px-4 py-2 text-xs
+      sm:px-5 sm:py-2.5 sm:text-sm
+      md:px-6 md:py-3 md:text-base
+      lg:px-8 lg:py-4 lg:text-lg
+    "
+                >
                   Mulai Mencatat Gratis
                 </Link>
               </div>
@@ -113,8 +126,23 @@ export default function LandingPage() {
             <p className="text-xl text-gray-500 mb-10 max-w-[600px] mx-auto">
               Bergabunglah dengan ratusan pembuat dan penjual yang sudah menggunakan JajaNote untuk menyederhanakan operasional mereka.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Link href="/login" className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-orange-600 px-12 py-6 text-2xl font-black text-white shadow-2xl shadow-orange-200 hover:bg-orange-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
+            <div className="pt-4">
+              <Link
+                href="/login"
+                className="
+      inline-flex items-center justify-center
+      rounded-full
+      bg-orange-600 text-white
+      shadow-2xl shadow-orange-200
+      transition-all hover:scale-105 active:scale-95 hover:bg-orange-700
+      uppercase tracking-widest
+
+      px-4 py-2 text-xs
+      sm:px-5 sm:py-2.5 sm:text-sm
+      md:px-6 md:py-3 md:text-base
+      lg:px-8 lg:py-4 lg:text-lg
+    "
+              >
                 Gabung Jajanote Sekarang
               </Link>
             </div>

@@ -103,7 +103,7 @@ export default function SellerHistoryContent() {
                 <div className="flex-1 min-w-[200px]">
                     <label className="block text-sm font-bold text-gray-900 mb-3">Tipe Pesanan</label>
                     <div className="relative">
-                        <select className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-5 py-3.5 appearance-none text-gray-600 font-medium focus:ring-2 focus:ring-orange-500/20 outline-none transition-all">
+                        <select className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-4 py-2.5 md:px-5 md:py-3.5 appearance-none text-gray-600 font-medium focus:ring-2 focus:ring-orange-500/20 outline-none transition-all">
                             <option>Semua Tipe</option>
                             <option>Titipan</option>
                             <option>Pre-Order</option>
@@ -120,13 +120,13 @@ export default function SellerHistoryContent() {
                         <input
                             type="text"
                             placeholder="01 Jan - 07 Jan 2024"
-                            className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-5 py-3.5 pr-12 text-gray-600 font-medium focus:ring-2 focus:ring-orange-500/20 outline-none transition-all placeholder:text-gray-400"
+                            className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-4 py-2.5 md:px-5 md:py-3.5 pr-12 text-gray-600 font-medium focus:ring-2 focus:ring-orange-500/20 outline-none transition-all placeholder:text-gray-400"
                         />
                         <Calendar className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     </div>
                 </div>
 
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-2xl transition-all shadow-lg shadow-orange-100 active:scale-[0.98]">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2.5 md:px-8 md:py-3.5 rounded-2xl transition-all shadow-lg shadow-orange-100 active:scale-[0.98]">
                     Terapkan Filter
                 </button>
             </div>
@@ -141,11 +141,11 @@ export default function SellerHistoryContent() {
                     <table className="w-full text-left">
                         <thead>
                             <tr className="bg-gray-50/50">
-                                <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Nama Maker / Produk</th>
-                                <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Titipan</th>
-                                <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Sisa</th>
-                                <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Total Penjualan</th>
-                                <th className="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Aksi</th>
+                                <th className="px-4 py-3 md:px-8 md:py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Nama Maker / Produk</th>
+                                <th className="px-4 py-3 md:px-8 md:py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Titipan</th>
+                                <th className="px-4 py-3 md:px-8 md:py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Sisa</th>
+                                <th className="px-4 py-3 md:px-8 md:py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Total Penjualan</th>
+                                <th className="px-4 py-3 md:px-8 md:py-5 text-sm font-bold text-gray-400 uppercase tracking-wider text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">

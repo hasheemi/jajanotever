@@ -223,7 +223,7 @@ export default function CatalogContent({ products = [] }) {
                     value={editName}
                     onChange={(e) => setEditName(e.target.value)}
                     disabled={isEditing}
-                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-medium disabled:opacity-70"
+                    className="w-full px-4 py-2.5 md:px-5 md:py-3.5 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-medium disabled:opacity-70"
                     placeholder="Contoh: Keripik Pisang"
                   />
                 </div>
@@ -234,7 +234,7 @@ export default function CatalogContent({ products = [] }) {
                     value={editPrice}
                     onChange={(e) => setEditPrice(e.target.value)}
                     disabled={isEditing}
-                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-medium disabled:opacity-70"
+                    className="w-full px-4 py-2.5 md:px-5 md:py-3.5 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-medium disabled:opacity-70"
                     placeholder="15000"
                   />
                 </div>
@@ -244,14 +244,14 @@ export default function CatalogContent({ products = [] }) {
                 <button
                   onClick={() => setEditingProduct(null)}
                   disabled={isEditing}
-                  className="flex-1 px-6 py-3.5 rounded-2xl font-bold text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-70"
+                  className="flex-1 px-4 py-2 md:px-6 md:py-3.5 rounded-2xl font-bold text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-70"
                 >
                   Batal
                 </button>
                 <button
                   onClick={handleEditSubmit}
                   disabled={isEditing}
-                  className="flex-1 px-6 py-3.5 bg-orange-600 text-white rounded-2xl font-bold hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 flex justify-center items-center gap-2 disabled:opacity-70"
+                  className="flex-1 px-4 py-2 md:px-6 md:py-3.5 bg-orange-600 text-white rounded-2xl font-bold hover:bg-orange-700 transition-all shadow-lg shadow-orange-200 flex justify-center items-center gap-2 disabled:opacity-70"
                 >
                   {isEditing ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
                   Simpan

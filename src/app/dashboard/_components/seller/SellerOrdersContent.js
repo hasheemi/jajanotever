@@ -134,7 +134,7 @@ export default function SellerOrdersContent({ userData, user }) {
 
                 <Link
                     href="/dashboard/product/pesan"
-                    className="flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-orange-600 transition-all shadow-sm"
+                    className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-2xl font-bold hover:bg-orange-600 transition-all shadow-sm"
                 >
                     <Plus className="w-5 h-5" />
                     Buat Pesanan
