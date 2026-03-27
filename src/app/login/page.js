@@ -17,18 +17,21 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
-            <div className="w-full max-w-md space-y-8 text-center">
+        <div className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-4 relative" style={{ backgroundImage: "url('/bg/login.png')" }}>
+            {/* Overlay for better readability */}
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+
+            <div className="w-full max-w-md space-y-8 text-center relative z-10 bg-white/80 p-10 rounded-[3rem] shadow-2xl border border-white/50 backdrop-blur-md">
                 <div className="flex flex-col items-center space-y-2">
-                    <Link href="/" className="flex items-center justify-center">
-                        <ShoppingBag className="h-10 w-10 text-orange-600" />
-                        <span className="ml-3 text-3xl font-extrabold tracking-tight text-orange-600">Jaja<span>Note</span></span>
+                    <Link href="/" className="flex items-center justify-center group">
+                        <ShoppingBag className="h-10 w-10 text-orange-600 group-hover:scale-110 transition-transform" />
+                        <span className="ml-3 text-4xl font-black tracking-tight text-black italic">Jajanote</span>
                     </Link>
-                    <h1 className="text-2xl font-bold text-gray-900 mt-6">Login to JajaNote</h1>
-                    <p className="text-gray-500">Track your jajan with one click</p>
+                    <h1 className="text-2xl font-black text-gray-900 mt-8 uppercase italic tracking-tighter">Masuk ke Jajanote</h1>
+                    <p className="text-gray-500 font-medium">Pantau jajan hanya dengan satu klik</p>
                 </div>
 
-                <div className="mt-8 bg-orange-50/30 p-8 rounded-3xl border border-orange-100 shadow-sm">
+                <div className="mt-8 bg-orange-50/50 p-2 rounded-[2rem] border border-orange-100 shadow-inner">
                     <button
                         onClick={handleGoogleLogin}
                         className="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 py-4 px-6 rounded-2xl font-semibold text-gray-700 hover:bg-gray-50 hover:shadow-md transition-all active:scale-95"
@@ -51,12 +54,12 @@ export default function LoginPage() {
                                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                             />
                         </svg>
-                        Continue with Google
+                        Lanjut dengan Google
                     </button>
                 </div>
 
-                <p className="text-sm text-gray-400 mt-8">
-                    By logging in, you agree to our Terms of Service <br /> and Privacy Policy.
+                <p className="text-xs text-gray-400 mt-10 font-medium leading-relaxed">
+                    Dengan mendaftar, Anda menyetujui Ketentuan Layanan <br /> dan Kebijakan Privasi kami.
                 </p>
             </div>
         </div>

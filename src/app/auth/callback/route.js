@@ -14,13 +14,18 @@ export async function GET(request) {
             const { data: { user } } = await supabase.auth.getUser()
 
             // Check if user exists in the 'users_v2' table
-            const { data: userData } = await supabase
+            const { data: userData, error: userError } = await supabase
                 .from('users_v2')
                 .select('*')
                 .eq('id', user.id)
                 .single()
 
+            if (userError && userError.code !== 'PGRST116') { // PGRST116 is 'no rows found'
+                console.error('Error fetching user profile:', userError)
+            }
+
             if (!userData) {
+                console.log('User profile not found, redirecting to register')
                 return NextResponse.redirect(`${origin}/register`)
             }
 

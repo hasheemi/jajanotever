@@ -12,13 +12,18 @@ export default async function RegisterPage() {
     }
 
     // Check if already registered
-    const { data: userData } = await supabase
+    const { data: userData, error: userError } = await supabase
         .from('users_v2')
         .select('*')
         .eq('id', user.id)
         .single()
 
+    if (userError && userError.code !== 'PGRST116') {
+        console.error('Error fetching user profile in register:', userError)
+    }
+
     if (userData) {
+        console.log('User already registered, redirecting to dashboard')
         redirect('/dashboard')
     }
 
@@ -57,37 +62,40 @@ export default async function RegisterPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
-            <div className="w-full max-w-md space-y-8">
+        <div className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-4 relative" style={{ backgroundImage: "url('/bg/register.png')" }}>
+            {/* Overlay for better readability */}
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+
+            <div className="w-full max-w-md space-y-8 relative z-10 bg-white/80 p-10 rounded-[3rem] shadow-2xl border border-white/50 backdrop-blur-md">
                 <div className="flex flex-col items-center space-y-2 text-center">
-                    <Link href="/" className="flex items-center justify-center">
-                        <ShoppingBag className="h-10 w-10 text-orange-600" />
-                        <span className="ml-3 text-3xl font-extrabold tracking-tight text-orange-600">Jaja<span>Note</span></span>
+                    <Link href="/" className="flex items-center justify-center group">
+                        <ShoppingBag className="h-10 w-10 text-orange-600 group-hover:scale-110 transition-transform" />
+                        <span className="ml-3 text-4xl font-black tracking-tight text-black italic">Jajanote</span>
                     </Link>
-                    <h1 className="text-2xl font-bold text-gray-900 mt-6">Complete Registration</h1>
-                    <p className="text-gray-500 text-sm">Welcome! Please fill in your details to get started.</p>
+                    <h1 className="text-2xl font-black text-gray-900 mt-8 uppercase italic tracking-tighter">Lengkapi Pendaftaran</h1>
+                    <p className="text-gray-500 text-sm font-medium">Selamat datang! Silakan isi detail Anda untuk memulai.</p>
                 </div>
 
-                <form action={registerUser} className="mt-8 space-y-6 bg-orange-50/30 p-8 rounded-3xl border border-orange-100 shadow-sm">
+                <form action={registerUser} className="mt-8 space-y-6 bg-orange-50/50 p-6 rounded-[2rem] border border-orange-100 shadow-inner">
                     <div className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
-                                Full Name
+                            <label htmlFor="name" className="block text-xs font-black text-gray-400 uppercase mb-2 ml-1 tracking-widest">
+                                Nama Lengkap
                             </label>
                             <input
                                 id="name"
                                 name="name"
                                 type="text"
                                 required
-                                className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                                placeholder="Ex: Budi Santoso"
+                                className="w-full px-5 py-4 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
+                                placeholder="Cth: Budi Santoso"
                                 defaultValue={user.user_metadata?.full_name || ''}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="role" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
-                                Role
+                            <label htmlFor="role" className="block text-xs font-black text-gray-400 uppercase mb-2 ml-1 tracking-widest">
+                                Peran (Role)
                             </label>
                             <select
                                 id="role"
@@ -95,33 +103,35 @@ export default async function RegisterPage() {
                                 required
                                 className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white"
                             >
-                                <option value="" disabled>Select your role</option>
-                                <option value="maker">Maker (Small Production)</option>
-                                <option value="seller">Seller (Outlet/Warung)</option>
+                                <option value="" disabled>Pilih peran Anda</option>
+                                <option value="maker">Maker (Pembuat Jajan)</option>
+                                <option value="seller">Seller (Penjual/Warung)</option>
                             </select>
                         </div>
 
                         <div>
-                            <label htmlFor="paguyuban" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
-                                Paguyuban (Community)
+                            <label htmlFor="paguyuban" className="block text-xs font-black text-gray-400 uppercase mb-2 ml-1 tracking-widest">
+                                Paguyuban (Komunitas)
                             </label>
                             <input
                                 id="paguyuban"
                                 name="paguyuban"
                                 type="text"
                                 required
-                                className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                                placeholder="Ex: Paguyuban Jajan Pasar"
+                                className="w-full px-5 py-4 rounded-2xl border border-white/50 bg-white/80 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all font-medium"
+                                placeholder="Cth: Paguyuban Jajan Pasar"
                             />
                         </div>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full flex items-center justify-center bg-orange-600 py-4 px-6 rounded-2xl font-bold text-white hover:bg-orange-700 shadow-lg shadow-orange-200 transition-all hover:scale-[1.02] active:scale-95 mt-8"
-                    >
-                        Complete Setup
-                    </button>
+                    <div className="flex flex-col gap-3 mt-8">
+                        <button
+                            type="submit"
+                            className="w-full flex items-center justify-center bg-orange-600 py-5 px-6 rounded-2xl font-black text-white hover:bg-orange-700 shadow-xl shadow-orange-200 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest"
+                        >
+                            Selesaikan Pendaftaran
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

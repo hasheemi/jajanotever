@@ -6,16 +6,16 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-white">
       {/* Navigation */}
       <header className="px-4 lg:px-6 h-16 flex items-center border-b border-orange-100 sticky top-0 bg-white/80 backdrop-blur-md z-50">
-        <Link className="flex items-center justify-center" href="/">
-          <ShoppingBag className="h-6 w-6 text-orange-600" />
-          <span className="ml-2 text-2xl font-bold tracking-tight text-orange-600">Jaja<span>Note</span></span>
+        <Link className="flex items-center justify-center group" href="/">
+          <ShoppingBag className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
+          <span className="ml-2 text-2xl font-black tracking-tight text-black italic">Jajanote</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:text-orange-600 transition-colors" href="/login">
-            Login
+          <Link className="text-sm font-bold text-gray-900 hover:text-orange-600 transition-colors uppercase tracking-widest" href="/login">
+            Masuk
           </Link>
-          <Link className="text-sm font-medium bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors shadow-sm" href="/login">
-            Get Started
+          <Link className="text-sm font-black bg-orange-600 text-white px-6 py-2.5 rounded-full hover:bg-orange-700 transition-all shadow-lg shadow-orange-100 hover:scale-105 active:scale-95 uppercase tracking-widest" href="/login">
+            Mulai Sekarang
           </Link>
         </nav>
       </header>
@@ -26,17 +26,17 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                  Track Your <span className="text-orange-600">Jajan</span> <br />
-                  from Maker to Seller
+                <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl leading-[0.9]">
+                  Catat <span className="text-orange-600 italic">Jajan</span> Anda <br />
+                  dari Pembuat ke Penjual
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl lg:text-2xl mt-4">
-                  The ultimate web tool for Indonesian snack ecosystems. Manage production, inventory, and sales effortlessly.
+                <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl lg:text-2xl mt-6 font-medium">
+                  Alat bantu web utama untuk ekosistem jajanan Indonesia. Kelola produksi, stok, dan penjualan dengan mudah.
                 </p>
               </div>
               <div className="space-x-4 pt-4">
-                <Link href="/login" className="inline-flex items-center justify-center rounded-xl bg-orange-600 px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-orange-700 transition-all hover:scale-105 active:scale-95">
-                  Start Tracking for Free
+                <Link href="/login" className="inline-flex items-center justify-center rounded-full bg-orange-600 px-10 py-5 text-xl font-black text-white shadow-2xl shadow-orange-200 hover:bg-orange-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
+                  Mulai Mencatat Gratis
                 </Link>
               </div>
             </div>
@@ -46,28 +46,28 @@ export default function LandingPage() {
         {/* Section 2: How It Works */}
         <section className="w-full py-20 bg-white">
           <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-12">How JajaNote Works</h2>
+            <h2 className="text-3xl font-black tracking-tighter sm:text-5xl text-center mb-16 uppercase italic">Bagaimana Jajanote Bekerja?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center p-6 rounded-2xl border border-orange-50 hover:shadow-xl hover:shadow-orange-100/50 transition-all">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <TrendingUp className="h-8 w-8 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Track Production</h3>
-                <p className="text-gray-600">Makers can log daily production batches and costs in real-time.</p>
+                <h3 className="text-xl font-black mb-2 uppercase">Lacak Produksi</h3>
+                <p className="text-gray-500 font-medium">Pembuat dapat mencatat batch produksi harian dan biaya secara real-time.</p>
               </div>
               <div className="flex flex-col items-center text-center p-6 rounded-2xl border border-orange-50 hover:shadow-xl hover:shadow-orange-100/50 transition-all">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-8 w-8 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Connect with Sellers</h3>
-                <p className="text-gray-600">Distribute your jajan to various outlets and monitor stock levels remotely.</p>
+                <h3 className="text-xl font-black mb-2 uppercase">Hubungkan ke Penjual</h3>
+                <p className="text-gray-500 font-medium">Distribusikan jajan Anda ke berbagai outlet dan pantau tingkat stok dari jarak jauh.</p>
               </div>
               <div className="flex flex-col items-center text-center p-6 rounded-2xl border border-orange-50 hover:shadow-xl hover:shadow-orange-100/50 transition-all">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <CheckCircle className="h-8 w-8 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Analyze Sales</h3>
-                <p className="text-gray-600">Get insights on top-performing products and sales trends instantly.</p>
+                <h3 className="text-xl font-black mb-2 uppercase">Analisis Penjualan</h3>
+                <p className="text-gray-500 font-medium">Dapatkan wawasan tentang produk terlaris dan tren penjualan secara instan.</p>
               </div>
             </div>
           </div>
@@ -109,13 +109,13 @@ export default function LandingPage() {
         {/* Section 4: Call to Action */}
         <section className="w-full py-32 bg-white">
           <div className="container px-4 md:px-6 mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 tracking-tight">Ready to grow your Jajan business?</h2>
+            <h2 className="text-4xl font-bold mb-6 tracking-tight">Siap mengembangkan bisnis jajanan Anda?</h2>
             <p className="text-xl text-gray-500 mb-10 max-w-[600px] mx-auto">
-              Join hundreds of makers and sellers already using JajaNote to streamline their operations.
+              Bergabunglah dengan ratusan pembuat dan penjual yang sudah menggunakan JajaNote untuk menyederhanakan operasional mereka.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Link href="/login" className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-orange-600 px-10 py-5 text-xl font-bold text-white shadow-xl hover:bg-orange-700 transition-all hover:scale-105 active:scale-95">
-                Join JajaNote Now
+              <Link href="/login" className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-orange-600 px-12 py-6 text-2xl font-black text-white shadow-2xl shadow-orange-200 hover:bg-orange-700 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest">
+                Gabung Jajanote Sekarang
               </Link>
             </div>
           </div>

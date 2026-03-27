@@ -27,13 +27,13 @@ export default async function DashboardLayout({ children }) {
         { label: 'Katalog', href: '/dashboard/catalog', icon: 'Box' },
         { label: 'Kotak Pesanan', href: '/dashboard/order', icon: 'MessageSquare' },
         { label: 'Riwayat', href: '/dashboard/history', icon: 'Clock' },
+        { label: 'Profil', href: '/dashboard/profile', icon: 'User' },
     ] : [
         { label: 'Beranda', href: '/dashboard', icon: 'Home' },
-        { label: 'Product', href: '/dashboard/product', icon: 'Box' },
+        { label: 'Produk', href: '/dashboard/product', icon: 'Box' },
         { label: 'Kotak Pesanan', href: '/dashboard/order', icon: 'MessageSquare' },
         { label: 'Riwayat', href: '/dashboard/history', icon: 'Clock' },
-        { label: 'Daftar Jualan', href: '/dashboard/inventory', icon: 'List' },
-        { label: 'Pengaturan', href: '/dashboard/settings', icon: 'Settings' },
+        { label: 'Profil', href: '/dashboard/profile', icon: 'User' },
     ]
 
     return (

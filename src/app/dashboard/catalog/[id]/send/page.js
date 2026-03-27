@@ -1,20 +1,30 @@
-'use client'
-
 import React from 'react'
 import SendProductContent from '../../../_components/maker/SendProductContent'
+import { createClient } from '@/lib/supabase/server'
+import { redirect } from 'next/navigation'
 
-export default function SendProductPage({ params }) {
-    const { id } = React.use(params)
+export default async function SendProductPage({ params }) {
+    const { id } = await params
+    const supabase = await createClient()
 
-    // Dummy product lookup (matching CatalogContent dummy data)
-    const dummyProducts = [
-        { id: 1, name: "Gethuk Lindri", price: 15000, imageSrc: "/dummy/gethuk.jpeg" },
-        { id: 2, name: "Bubur Sumsum", price: 10000, imageSrc: "/dummy/sumsum.jpeg" },
-        { id: 3, name: "Martabak Terbul", price: 25000, imageSrc: "/dummy/terbul.jpeg" },
-        { id: 4, name: "Keripik Pisang", price: 15000, imageSrc: null }
-    ]
+    // Fetch product details
+    const { data: product, error: productError } = await supabase
+        .from('products_v2')
+        .select('*')
+        .eq('id', id)
+        .single()
 
-    const product = dummyProducts.find(p => p.id === parseInt(id)) || dummyProducts[0]
+    if (productError || !product) {
+        redirect('/dashboard/catalog')
+    }
 
-    return <SendProductContent product={product} />
+    // Fetch current user details for paguyuban filtering
+    const { data: { user } } = await supabase.auth.getUser()
+    const { data: currentUser } = await supabase
+        .from('users_v2')
+        .select('*')
+        .eq('id', user?.id)
+        .single()
+
+    return <SendProductContent product={product} currentUser={currentUser} />
 }
