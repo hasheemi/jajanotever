@@ -30,8 +30,8 @@ export default function Sidebar({ menuItems, userData, user }) {
             )}
 
             <aside className={`
-                w-72 border-r border-gray-50 bg-white p-8 flex flex-col gap-10 h-screen sticky top-0 z-40
-                fixed lg:sticky transition-transform duration-300 ease-in-out
+                w-72 border-r border-gray-50 bg-white p-8 flex flex-col gap-10 h-screen z-40
+                fixed lg:sticky top-0 transition-transform duration-300 ease-in-out
                 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             `}>
                 {/* Logo */}
